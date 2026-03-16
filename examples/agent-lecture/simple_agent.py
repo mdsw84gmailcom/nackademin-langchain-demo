@@ -19,16 +19,24 @@ def run():
     )
 
     # Get user input
-    user_input = get_user_input("Ställ din fråga")
+    conversation = []
 
-    # Call the agent
-    process_stream = agent.stream(
-        {"messages": [{"role": "user", "content": user_input}]},
-        stream_mode=STREAM_MODES,
-    )
+    while True:
+        user_input = get_user_input("Ställ din fråga(skriv 'exit' för att avsluta)")
 
-    # Stream the process
-    handle_stream(process_stream)
+        if user_input.lower() == "exit":
+            break
+
+        conversation.append({"role": "user", "content": user_input})
+
+        # Call the agent
+        process_stream = agent.stream(
+            {"messages": conversation},
+            stream_mode=STREAM_MODES,
+        )
+
+        # Stream the process
+        handle_stream(process_stream)
 
 
 if __name__ == "__main__":
