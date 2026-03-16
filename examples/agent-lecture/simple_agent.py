@@ -3,6 +3,7 @@ from langchain.agents import create_agent
 from util.models import get_model
 from util.streaming_utils import STREAM_MODES, handle_stream
 from util.pretty_print import get_user_input
+from util.tools import calculate
 
 
 def run():
@@ -12,6 +13,7 @@ def run():
     # Create agent
     agent = create_agent(
         model=model,
+        tools=[calculate],
         system_prompt=(
             "Du är en hjälpsam assistent som svarar på användarens frågor."
             "Svara alltid på svenska och var koncis men informativ."
