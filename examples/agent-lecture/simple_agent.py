@@ -7,7 +7,7 @@ from util.pretty_print import get_user_input
 
 def run():
     # Get predefined attributes
-    model = get_model(temperature=0.1, top_p=0.5)
+    model = get_model(temperature=0.9, top_p=0.95)
 
     # Create agent
     agent = create_agent(
