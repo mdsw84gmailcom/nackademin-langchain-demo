@@ -1,0 +1,3 @@
+My name is Marian.
+I am studying MLOps.
+This is a test file for the AI agent.
