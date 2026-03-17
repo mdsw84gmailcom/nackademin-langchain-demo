@@ -1,0 +1,8 @@
+MLOps stands for Machine Learning Operations.
+It combines machine learning, DevOps and data engineering practices to deploy, monitor and maintain machine learning models in production. 
+
+Key components of MLOps include:
+- model deployment
+- monitoring
+- versioning
+- reproducibility
